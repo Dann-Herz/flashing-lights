@@ -1,7 +1,17 @@
+:root{                          /*  Use estas variables con total comodidad */
+   --color-inicial: #4a768f;           /*   var(--color-inicial)    */
+   --color-final: #266b3b;             /*   var(--color-final)      */
+   --width-initial: 70vh;                /*   var(--width-initial)    */
+   --height-initial: 70vh;               /*   var(--height-initial)   */
+   --width-final: 80vh;                  /*   var(--width-final)      */
+   --height-final: 80vh;                 /*   var(--height-final)     */
+}
+
 *{
   font-size: 62.5%;
 
 }
+
 
 .App {
   text-align: center;
@@ -31,11 +41,12 @@
 }
 
 .App-header div {
-  min-height: 80vh;
-  min-width: 80vh;
+  min-height: 10vh;
+  min-width: 10vh;
   background-color: #61fb8f;
   animation-name: colors;
-  animation-duration: 4s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
 .App-link {
@@ -45,8 +56,12 @@
 /* Revisar animations en el pocket */
 
 @keyframes colors {
-  from {background-color: red;}
-  to {background-color: yellow;}
+  
+  0% {background-color: var(--color-inicial); width: var(--width-initial); height: var(--height-initial); }
+  25% {background-color: var(--color-final); width: var(--width-final); height: var(--height-final);}
+  50% {background-color: var(--color-inicial); width: var(--width-initial); height: var(--height-initial); }
+  75% {background-color: var(--color-final); width: var(--width-final); height: var(--height-final);}
+  100% {background-color: var(--color-inicial); width: var(--width-initial); height: var(--height-initial); }
 }
 
 @keyframes App-logo-spin {

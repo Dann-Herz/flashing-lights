@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+//actualizar variables css con javascript, para esto busca en tu pocket
 function App() {
   return (
     <div className="App">
@@ -9,6 +9,9 @@ function App() {
             
           </div>
       </header>
+      <div className="controlador">
+        
+      </div>
     </div>
   );
 }
