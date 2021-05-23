@@ -7,9 +7,12 @@
    --height-final: 80vh;                 /*   var(--height-final)     */
 }
 
+
 *{
   font-size: 62.5%;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -47,6 +50,26 @@
   animation-name: colors;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
+}
+
+.controlador {
+  background-color: #499cb3;
+  min-width: 15vw;
+  min-height: 40vh;
+  position: absolute;
+  left: 80vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.controlador button {
+  background-color: black;
+  color: white;
+  width: 5vw;
+  height: 5vh; 
+  border-radius: 5px;
 }
 
 .App-link {
