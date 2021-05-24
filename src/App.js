@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 //actualizar variables css con javascript, para esto busca en tu pocket
+
 function App() {
   let root = document.documentElement;
   const algo = () => {
@@ -9,18 +10,24 @@ function App() {
     }, 5000);
   };
   algo();
-  //I did put the part to configure one variable in the CSS, I put the css of one controller
-  //I left the event click to complete later this function, you can check in your pocket events click javascript
+  const agrandar = () => {
+    root.style.setProperty('--height-initial', `${10}vh`)
+      root.style.setProperty('--width-initial', `${10}vh`)
+
+  };
+
+  //So, for now I set the button to do agrandar(); to diminish the initial size of the box
+  //I need to make one function to enlarge or diminish one number in a closure
   return (
     <div className="App">
       <header className="App-header">  
           <div>
             
           </div>
-          <form className="controlador">
-            <button>aumentar</button>
+          <footer className="controlador">
+            <button onClick={agrandar}>aumentar</button>
             <button>disminuir</button>
-        </form>
+        </footer>
       </header>
 
     </div>
