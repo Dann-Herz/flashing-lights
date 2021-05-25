@@ -4,20 +4,44 @@ import './App.css';
 
 function App() {
   let root = document.documentElement;
-  const algo = () => {
-    setTimeout(() => {
-      root.style.setProperty('--color-inicial', "#4a768f00")
-    }, 5000);
-  };
-  algo();
+  // const algo = () => {
+  //   setTimeout(() => {
+  //     root.style.setProperty('--color-inicial', "#4a768f00")
+  //   }, 5000);
+  // };
+  // algo();
+
+  //this is the closure, don't touch it
+  const howMuch = () => {
+    var size = 70;
+    const countSize = (toAdd) => {
+      size += toAdd;
+      console.log(`Este es mi valor...  ${size}`);
+      return size
+    };
+
+    return countSize
+  }
+  const mySize = howMuch();
+  
+ 
+//these functions are to enlarge or diminish the size of the box when you click the button
   const agrandar = () => {
-    root.style.setProperty('--height-initial', `${10}vh`)
-      root.style.setProperty('--width-initial', `${10}vh`)
+      root.style.setProperty('--height-initial', `${mySize(1)}vh`);
+      root.style.setProperty('--width-initial', `${mySize(1)}vh`);
 
   };
-
-  //So, for now I set the button to do agrandar(); to diminish the initial size of the box
-  //I need to make one function to enlarge or diminish one number in a closure
+  const disminuir = () => {
+      root.style.setProperty('--height-initial', `${mySize(-1)}vh`);
+      root.style.setProperty('--width-initial', `${mySize(-1)}vh`);
+ 
+  };
+  //This is only one test
+  const agregar = () => {
+      var valor = mySize();
+      return valor
+  };
+  //
   return (
     <div className="App">
       <header className="App-header">  
@@ -26,7 +50,8 @@ function App() {
           </div>
           <footer className="controlador">
             <button onClick={agrandar}>aumentar</button>
-            <button>disminuir</button>
+            <p>{}Px</p>
+            <button onClick={disminuir}>disminuir</button>
         </footer>
       </header>
 
