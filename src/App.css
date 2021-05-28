@@ -5,6 +5,7 @@
    --height-initial: 70vh;               /*   var(--height-initial)   */
    --width-final: 80vh;                  /*   var(--width-final)      */
    --height-final: 80vh;                 /*   var(--height-final)     */
+   --animation-delay: 1.5s;              /*   var(--animation-delay)  */
 }
 
 
@@ -20,18 +21,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App-shape {
   background-color: #0a1527d7;
   min-height: 100vh;
   min-width: 100vh;
@@ -43,33 +33,62 @@
   color: white;
 }
 
-.App-header div {
+.App-shape-square {
   min-height: 10vh;
   min-width: 10vh;
   background-color: #61fb8f;
   animation-name: colors;
-  animation-duration: 1.5s;
+  animation-duration: var(--animation-delay);
   animation-iteration-count: infinite;
 }
 
-.controlador {
+.controller {
   background-color: #499cb3;
-  min-width: 15vw;
-  min-height: 40vh;
+  min-width: 20vw;
+  min-height: 60vh;
   position: absolute;
-  left: 80vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  left: 75vw;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  /* justify-content: space-around;
+  align-items: center; */
   border-radius: 5px;
 }
 
-.controlador button {
+.controller-frequency {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 2rem;
+  /* text-align: center; */
+  border-bottom: 1px solid #000;
+}
+
+.controller-initialSize {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  border-bottom: 1px solid #000;
+  font-size:4rem;
+}
+
+.controller-finalSize {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  border-bottom: 1px solid #000;
+  font-size:4rem;
+}
+
+.controller button {
   background-color: black;
   color: white;
   width: 5vw;
   height: 5vh; 
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .App-link {
@@ -86,7 +105,7 @@
   75% {background-color: var(--color-final); width: var(--width-final); height: var(--height-final);}
   100% {background-color: var(--color-inicial); width: var(--width-initial); height: var(--height-initial); }
 }
-
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -94,4 +113,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
